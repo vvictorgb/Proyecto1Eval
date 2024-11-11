@@ -8,7 +8,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $cli = new Cliente($_POST['dni'], $_POST['nombre'], $_POST['direccion'], $_POST['email'], $contraseña);
     $cli->guardar($link);
     header('Location:lineas.php');
-} elseif ($_SERVER['REQUEST_METHOD'] == 'GET') { {
+}
+    
+/*} elseif ($_SERVER['REQUEST_METHOD'] == 'GET') { {
         //validar cliente
         $cli = new Cliente($_GET['dniCliente'], '', '', '', '');
         $dato = $cli->validar($base->link);
@@ -17,3 +19,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
 }
+*/
