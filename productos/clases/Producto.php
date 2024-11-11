@@ -25,5 +25,6 @@ class Producto
         $consulta = $link->prepare("SELECT * FROM productos");
         $consulta->execute();
         return $consulta;
+        //prueba
     }
 }
