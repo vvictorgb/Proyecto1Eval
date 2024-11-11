@@ -35,5 +35,6 @@ class Cliente
     {
         $consulta = $link->prepare("SELECT pwd FROM clientes WHERE dniCliente = '$this->dniCliente'");
         $consulta->execute();
+        //prueba
     }
 }
