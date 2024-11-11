@@ -24,7 +24,7 @@ class Cliente
     {
         try {
             $consulta = $link->prepare("INSERT into pedidos (dniCliente, nombre, direccion, email, pwd) values ('$this->dniCliente','$this->nombre','$this->direccion', '$this->email','$this->pwd')");
-            $consulta->execute();
+            return $consulta->execute();
         } catch (PDOException $e) {
             $dato = "¡Error!: " . $e->getMessage() . "<br/>";
             require "../vistas/mensaje.php";
