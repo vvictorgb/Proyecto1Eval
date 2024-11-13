@@ -1,2 +1,2 @@
 <?php
-header("location:controladores/index.php");
+header("location:controladores/inicio.php");
