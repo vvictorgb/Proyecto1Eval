@@ -1,4 +1,4 @@
-const apiURL = "https://api.ejemplo.com/productos";
+const apiURL = 'C:/xampp/htdocs/GomezBalaguerVíctorProyecto1T/Proyecto1Eval/productos/producto.php';
 function renderProductos() {
     const productosContainer = document.querySelector('.introducirCard');
 
