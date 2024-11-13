@@ -1,6 +1,7 @@
-const apiURL = 'C:/xampp/htdocs/GomezBalaguerVíctorProyecto1T/Proyecto1Eval/productos/producto.php';
+let apiURL = 'http://localhost/GomezBalaguerV%c3%adctorProyecto1T/Proyecto1Eval/productos/producto.php';
+
 function renderProductos() {
-    const productosContainer = document.querySelector('.introducirCard');
+    const productosContainer = document.querySelector('.contenedorFotos');
 
     fetch(apiURL)
         .then(response => {
@@ -12,6 +13,8 @@ function renderProductos() {
         .then(productos => {
 
             productosContainer.innerHTML = "";
+            let row = document.createElement('div');
+            row.classList.add('row')
 
             productos.forEach(producto => {
 
@@ -57,10 +60,11 @@ function renderProductos() {
                 cardDiv.appendChild(img);
                 cardDiv.appendChild(cardBodyDiv);
                 colDiv.appendChild(cardDiv);
+                row.appendChild(colDiv);
+            }
 
-
-                productosContainer.appendChild(colDiv);
-            });
+            );
+            productosContainer.appendChild(row)
         })
         .catch(error => {
             console.error("Error al obtener los productos:", error);

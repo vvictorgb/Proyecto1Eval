@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>North Peak</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../vistas/verDetalle/style.css">
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="#">
-            <img src="Logo.png" alt="Logo de North Peak" class="logo-image">
+            <img src="../vistas/imagenes/Logo.png" alt="Logo de North Peak" class="logo-image">
         </a>
         <div class="collapse navbar-collapse">
             <span class="navbar-text centered-text">ENVÍO GRATIS DESDE 19€</span>
@@ -23,16 +23,16 @@
         </form>
         <div id="logosJuntos">
             <a href="" id="logoUsuario">
-                <img src="logoUsuario.png" alt="iconoUsuario">
+                <img src="../vistas/imagenes/logoUsuario.png" alt="iconoUsuario">
             </a>
             <a href="" id="logoCarrito">
-                <img src="logoCarrito.png" alt="iconoCarrito">
+                <img src="../vistas/imagenes/logoCarrito.png" alt="iconoCarrito">
             </a>
         </div>
     </nav>
 
 
-    <div id="posicionImagenDetalle"> <img src="prueba.png" alt="imagen1" id="imagenDetalle"></div>
+    <div id="posicionImagenDetalle"> <img src="" alt="imagen1" id="imagenDetalle"></div>
 
     <div class="row cuerpoDetalle">
         <div class="col-md-6 infoPrenda">
@@ -80,7 +80,7 @@
                 <p>North Peak:</p>
                 <p>En North Peak, garantizamos una experiencia de compra segura y confiable para que disfrutes de
                     nuestros productos de calidad con total tranquilidad.</p>
-                <form action="carrito" method="post">
+                <form action="verCarrito.php" method="post">
                     <input type="hidden" value="" name="nombre" id="nombreFormulario">
                     <input type="hidden" value="" name="idProducto" id="idProductoFormulario">
                     <input type="hidden" value="" name="precio" id="precioFormulario">
@@ -148,7 +148,7 @@
 
     </footer>
 
-
+    <script src="../vistas/js/verDetalle.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -1,11 +1,10 @@
 <?php
 require "config/autocarga.php";
 $base = new Base();
-$vector = json_decode(file_get_contents("php://input"), true);
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    if (isset($vector['idProducto'])) {
+    if (isset($_GET['idProducto'])) {
         //Mostrar un Cliente
-        $pro = new Producto($vector['idProducto']);
+        $pro = new Producto($_GET['idProducto']);
         $dato = $pro->buscar($base->link);
         header("HTTP/1.1 200 OK");
         echo json_encode($dato);
