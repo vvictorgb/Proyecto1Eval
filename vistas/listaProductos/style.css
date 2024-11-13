@@ -1,0 +1,265 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+
+/* Navbar */
+.navbar {
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    height: 6vh;
+    background-color: #000000;
+    flex-wrap: nowrap;
+}
+
+.navbar-brand {
+    padding: 0 !important;
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+    width: 18vh;
+    height: 6vh;
+}
+
+.logo-image {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#logoUsuario {
+    height: 3vh;
+    margin-right: 50px;
+}
+
+#logoUsuario img {
+    height: 100%;
+    width: auto;
+}
+
+#logosJuntos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+}
+
+#logoCarrito {
+    height: 3vh;
+    margin-right: 2%;
+}
+
+#logoCarrito img {
+    height: 100%;
+    width: auto;
+}
+
+.buscador {
+    width: 10%;
+    margin-right: 60px;
+    min-width: 100px;
+}
+
+.navbar-text.centered-text {
+    font-size: 0.75rem;
+    color: rgb(182, 182, 182);
+}
+
+.centered-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+
+
+/* Section */
+.migasDePan {
+    display: flex;
+    font-size: 0.9rem;
+}
+
+.migasDePan a {
+    color: #000000;
+}
+
+.migasDePan p:nth-child(2) {
+    margin-left: 6px;
+    margin-right: 6px;
+
+}
+
+section h1 {
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.descripcion {
+    border-top: 1px solid black;
+    width: 53%;
+    padding-top: 15px;
+}
+
+
+#posicionInfo {
+    margin-top: 40px;
+    margin-left: 80px;
+}
+
+.filtroSeleccionado {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    min-width: 160px;
+
+}
+
+#posicionSecciones {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    gap: 60px;
+    height: 65px;
+    width: 53%;
+}
+
+#posicionSecciones div:not(.filtroSeleccionado) {
+    border: 1px solid black;
+    border-radius: 7px;
+    display: flex;
+    padding: 10px;
+    min-width: 160px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+#posicionSecciones div:not(.filtroSeleccionado):hover {
+    border: solid black 3px;
+    cursor: pointer;
+}
+
+#posicionInfo h4 {
+    padding-top: 20px;
+
+}
+
+#filtros {
+    display: flex;
+    margin-top: 15px;
+    gap: 30px;
+    margin-left: 80px;
+    height: 70px;
+    width: 50%;
+    padding-top: 30px;
+}
+
+#filtros div:not(#textoFiltro) {
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 10px;
+    font-size: 0.8rem;
+    min-width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#filtros div:not(#textoFiltro):hover {
+    border: solid black 3px;
+    cursor: pointer;
+}
+
+#textoFiltro {
+    transform: translateY(9px);
+}
+
+
+#posicionBorrar {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: flex-end;
+    width: 91%;
+}
+
+#borrarFiltros:hover {
+    text-decoration: underline black;
+    cursor: pointer;
+}
+
+.contenedorFotos {
+    width: 90%;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.espacioCard {
+    margin: 10px;
+    border: 2px solid rgb(167, 164, 164);
+    box-shadow: 0px 0px 10px black;
+}
+
+.card-body {
+    padding: 8px;
+}
+
+.card img {
+    border-bottom: 2px solid rgb(167, 164, 164);
+    height: 370px;
+}
+
+.sombraInfo {
+    box-shadow: 0px 0px 10px black;
+}
+
+.precio {
+    display: flex;
+    justify-content: flex-end;
+    transform: translateY(-26px);
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+/* Footer */
+
+.footer {
+    text-align: center;
+    background-color: #000000;
+}
+
+.footer h5 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+h5 {
+    font-size: 0.9rem;
+}
+
+li a {
+    font-size: 0.8rem;
+}

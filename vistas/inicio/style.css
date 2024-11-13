@@ -1,0 +1,125 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    height: 6vh;
+    background-color: #000000;
+    flex-wrap: nowrap;
+}
+
+.navbar-brand {
+    padding: 0 !important;
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+    width: 18vh;
+    height: 6vh;
+}
+
+.logo-image {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#logoUsuario {
+    height: 3vh;
+    margin-right: 50px;
+}
+
+#logoUsuario img {
+    height: 100%;
+    width: auto;
+}
+
+#logosJuntos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+}
+
+#logoCarrito {
+    height: 3vh;
+    margin-right: 2%;
+}
+
+#logoCarrito img {
+    height: 100%;
+    width: auto;
+}
+
+.buscador {
+    width: 10%;
+    margin-right: 60px;
+    min-width: 100px;
+}
+
+.navbar-text.centered-text {
+    font-size: 0.60rem;
+    color: rgb(182, 182, 182);
+}
+
+
+
+/* Hero */
+.hero {
+    height: 90vh;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.positionSection a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 10px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.positionSection a:hover {
+    text-decoration: underline white;
+}
+
+.positionSection {
+    transform: translateY(-360px);
+
+}
+
+.centered-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    background-color: #000000;
+}
+
+.footer h5 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+h5 {
+    font-size: 0.9rem;
+}
+
+li a {
+    font-size: 0.8rem;
+}
