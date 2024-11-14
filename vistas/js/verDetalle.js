@@ -21,6 +21,4 @@ fetch('http://localhost/GomezBalaguerV%c3%adctorProyecto1T/Proyecto1Eval/product
         imagen.src = ruta;
 
     })
-
-
     .catch(error => console.error("Error en la solicitud:", error));
