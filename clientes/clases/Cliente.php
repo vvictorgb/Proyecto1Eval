@@ -23,12 +23,11 @@ class Cliente
     function guardar($link)
     {
         try {
-            $consulta = $link->prepare("INSERT into pedidos (dniCliente, nombre, direccion, email, pwd) values ('$this->dniCliente','$this->nombre','$this->direccion', '$this->email','$this->pwd')");
+            $consulta = $link->prepare("INSERT into clientes (dniCliente, nombre, direccion, email, pwd) values ('$this->dniCliente','$this->nombre','$this->direccion', '$this->email','$this->pwd')");
             return $consulta->execute();
         } catch (PDOException $e) {
-            $dato = "¡Error!: " . $e->getMessage() . "<br/>";
-            require "../vistas/mensaje.php";
-            die();
+            error_log("Error en guardar: " . $e->getMessage());
+            return false;
         }
     }
     function validar($link)

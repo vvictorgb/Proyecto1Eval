@@ -15,15 +15,19 @@ class Producto
             $result->execute();
             return $result->fetch(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
-            $dato = "¡Error!: " . $e->getMessage() . "<br/>";
-            return $dato;
-            die();
+            error_log("Error en guardar: " . $e->getMessage());
+            return false;
         }
     }
     static function getAll($link)
     {
-        $consulta = $link->prepare("SELECT * FROM productos");
-        $consulta->execute();
-        return $consulta;
+        try {
+            $consulta = $link->prepare("SELECT * FROM productos");
+            $consulta->execute();
+            return $consulta;
+        } catch (PDOException $e) {
+            error_log("Error en guardar: " . $e->getMessage());
+            return false;
+        }
     }
 }

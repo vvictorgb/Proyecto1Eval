@@ -2,21 +2,22 @@
 require "config/autocarga.php";
 $base = new Base();
 $link = $base->link;
-//crear nuevo cliente
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre = $_POST['nombre'];
+    $email = $_POST['email'];
+    $dniCliente = $_POST['dniCliente'];
+    $direccion = $_POST['direccion'];
     $contraseña = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
-    $cli = new Cliente($_POST['dni'], $_POST['nombre'], $_POST['direccion'], $_POST['email'], $contraseña);
-    $cli->guardar($link);
-    header('Location:lineas.php');
-}
-    
-/*} elseif ($_SERVER['REQUEST_METHOD'] == 'GET') { {
-        //validar cliente
-        $cli = new Cliente($_GET['dniCliente'], '', '', '', '');
-        $dato = $cli->validar($base->link);
+    $cli = new Cliente($dniCliente, $nombre, $direccion, $email, $contraseña);
+    if ($cli->guardar($link)) {
         header("HTTP/1.1 200 OK");
-        echo json_encode($dato);
-        exit();
+        $_SESSION['usuario'] = $nombre;
+        $_SESSION['dniCliente'] = $dniCliente;
+        echo json_encode(["registro" => true]);
+    } else {
+        header("HTTP/1.1 400 Bad Request");
+        echo json_encode(["registro" => false]);
     }
 }
-*/
