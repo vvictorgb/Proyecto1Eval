@@ -1,5 +1,4 @@
 <?php
-
 class Cliente
 {
     private $dniCliente;
@@ -7,7 +6,6 @@ class Cliente
     private $direccion;
     private $email;
     private $pwd;
-
     function __construct($dni, $nombre, $direccion, $email, $pwd)
     {
         $this->dniCliente = $dni;
@@ -16,23 +14,33 @@ class Cliente
         $this->email = $email;
         $this->pwd = $pwd;
     }
+
     function __get($var)
     {
         return $this->$var;
     }
+
     function guardar($link)
     {
-        try {
-            $consulta = $link->prepare("INSERT into clientes (dniCliente, nombre, direccion, email, pwd) values ('$this->dniCliente','$this->nombre','$this->direccion', '$this->email','$this->pwd')");
-            return $consulta->execute();
-        } catch (PDOException $e) {
-            error_log("Error en guardar: " . $e->getMessage());
-            return false;
-        }
+        $consulta = $link->prepare("INSERT into clientes (dniCliente, nombre, direccion, email, pwd) values ('$this->dniCliente','$this->nombre','$this->direccion', '$this->email','$this->pwd')");
+        return $consulta->execute();
     }
-    function validar($link)
+
+
+    function obtenerPwd($link)
     {
-        $consulta = $link->prepare("SELECT pwd FROM clientes WHERE dniCliente = '$this->dniCliente'");
+        $consulta = $link->prepare("SELECT pwd FROM clientes WHERE dniCliente = :dniCliente");
+        $consulta->bindParam(':dniCliente', $this->dniCliente);
         $consulta->execute();
+        $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+        return $resultado['pwd'];
+    }
+
+    function buscar($link)
+    {
+        $consulta = "SELECT * FROM clientes where dniCliente='$this->dniCliente'";
+        $result = $link->prepare($consulta);
+        $result->execute();
+        return $result->fetch(PDO::FETCH_ASSOC);
     }
 }

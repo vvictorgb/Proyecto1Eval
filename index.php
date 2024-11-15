@@ -1,2 +1,2 @@
 <?php
-header("location:controladores/inicio.php");
+header("location:controladores/registrarse.php");
