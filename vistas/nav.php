@@ -4,12 +4,15 @@ session_start();
 <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" href="#">
         <img src="../vistas/imagenes/Logo.png" alt="Logo de North Peak" class="logo-image">
-
-        <?php if (isset($_SESSION['nombre'])): ?>
+        <?php
+        if (isset($_SESSION['nombre'])) {
+        ?>
             <span class="navbar-text collapse navbar-collapse" style="margin-left:20px; color:#7d7979; font-size: 16px;">
-                ¡Bienvenido <?php echo htmlspecialchars($_SESSION['nombre']); ?>!
+                ¡Bienvenido <?php echo $_SESSION['nombre']; ?>!
             </span>
-        <?php endif; ?>
+        <?php
+        }
+        ?>
     </a>
 
     <div class="collapse navbar-collapse">

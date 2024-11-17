@@ -1,4 +1,4 @@
-document.getElementById('formularioRegistrarse').addEventListener('submit', function (event) {
+document.getElementById('formularioValidarse').addEventListener('submit', function (event) {
     event.preventDefault();
     var formData = new FormData(this);
     let dniEnviar = formData.get('dniCliente');
@@ -10,8 +10,9 @@ document.getElementById('formularioRegistrarse').addEventListener('submit', func
             if (data.registro) {
                 window.location.href = "inicio.php";
             } else {
-                document.getElementById('errorRegistro').style.visibility = 'visible';
-                document.getElementById('formularioRegistrarse').reset();
+                document.getElementById('formularioValidarse').reset();
+                document.getElementById('errorValidarse').style.visibility = 'visible';
+
             }
         })
         .catch(error => {
