@@ -19,23 +19,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $link->commit();
             exit();
         } else {
-            header("HTTP/1.1 200 OK");
+            header("HTTP/1.1 401 Unauthorized");
             echo json_encode(["registro" => false, "error" => "El DNI ya está registrado."]);
             exit();
         }
     } catch (PDOException $e) {
         $link->rollback();
         $dato = "¡Error!: " . $e->getMessage();
+        header("HTTP/1.1 500 Internal Server Error");
         echo json_encode(["registro" => false, "error" => $dato]);
         exit();
     }
 } elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
     try {
+
         $link->beginTransaction();
-        $intentoContraseña = password_hash($_GET['pwd'], PASSWORD_DEFAULT);
+        $contraseñaIngresada = $_GET['pwd'];
         $cli = new Cliente($_GET['dniCliente'], "", "", "", "");
-        $contraseña = $cli->obtenerPwd($link);
-        if ($intentoContraseña == $contraseña) {
+        $contraseñaAlmacenada = $cli->obtenerPwd($link);
+
+        if (password_verify($contraseñaIngresada, $contraseñaAlmacenada)) {
             header("HTTP/1.1 200 OK");
             $datosCliente = $cli->buscar($link);
             $_SESSION['nombre'] = $datosCliente['nombre'];
@@ -43,12 +46,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo json_encode(["registro" => true]);
             $link->commit();
             exit();
+        } else {
+
+            header("HTTP/1.1 401 Unauthorized");
+            echo json_encode(["registro" => false, "error" => "Contraseña o DNI incorrectos"]);
+            exit();
         }
     } catch (PDOException $e) {
+
         $link->rollback();
         $dato = "¡Error!: " . $e->getMessage();
+        header("HTTP/1.1 500 Internal Server Error");
         echo json_encode(["registro" => false, "error" => $dato]);
         exit();
     }
 }
+
 header("HTTP/1.1 400 Bad Request");

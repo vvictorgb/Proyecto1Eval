@@ -1,18 +1,10 @@
 document.getElementById('formularioRegistrarse').addEventListener('submit', function (event) {
     event.preventDefault();
     var formData = new FormData(this);
-    var jsonData = {};
-    formData.forEach((value, key) => {
-        jsonData[key] = value;
-    });
-
-    fetch('http://localhost/GomezBalaguerV%c3%adctorProyecto1T/Proyecto1Eval/clientes/cliente.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(jsonData)
-    })
+    let dniEnviar = formData.get('dniCliente');
+    let contraseñaEnviar = formData.get('pwd');
+    let api = 'http://localhost/GomezBalaguerV%c3%adctorProyecto1T/Proyecto1Eval/clientes/cliente.php' + "?dniCliente=" + dniEnviar + '&pwd=' + contraseñaEnviar
+    fetch(api)
         .then(response => response.json())
         .then(data => {
             if (data.registro) {
