@@ -1,188 +1,85 @@
 /* General */
+
 body {
     font-family: Arial, sans-serif;
+    background-color: rgb(43, 39, 56);
 }
 
-
-
-/* Navbar */
-.navbar {
-    padding: 0 !important;
-    display: flex;
-    align-items: center;
-    height: 6vh;
-    background-color: #000000;
-    flex-wrap: nowrap;
-}
-
-.navbar-brand {
-    padding: 0 !important;
-    margin-right: 50px;
-    display: flex;
-    align-items: center;
-    width: 18vh;
-    height: 6vh;
-}
-
-.logo-image {
-    display: block;
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
-
-#logoUsuario {
-    height: 3vh;
-    margin-right: 50px;
-}
-
-#logoUsuario img {
-    height: 100%;
+#imagenValidarse {
+    height: 40px;
     width: auto;
-}
-
-#logosJuntos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 30px;
-}
-
-#logoCarrito {
-    height: 3vh;
-    margin-right: 2%;
-}
-
-#logoCarrito img {
-    height: 100%;
-    width: auto;
-}
-
-.buscador {
-    width: 10%;
-    margin-right: 60px;
-    min-width: 100px;
-}
-
-.navbar-text.centered-text {
-    font-size: 0.75rem;
-    color: rgb(182, 182, 182);
-}
-
-.centered-text {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-
-
-
-
-section {
-    background-size: cover;
-    background-position: center;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#tituloFormulario {
-    font-size: 30px;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    background-color: #9f0101;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-section form {
-    width: 400px;
-    margin: 20px auto;
-    background-color: #fff;
-    border-radius: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
+    border-radius: 6px;
     overflow: hidden;
-
 }
 
-section form p {
-    margin-bottom: 2px;
+#parteInferiorValidar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.tituloInput {
-    margin-top: 7px;
-    color: rgb(0, 0, 0);
-    size: 18px;
-}
-
-#botonEnviar {
-    background-color: #9f0101;
-    color: white;
-    margin-top: 7px;
-    margin-bottom: 3px;
-    border-radius: 5px;
-    width: 20%;
-}
-
-form a {
-    color: #000000;
+#formulariRegistrarse {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 20px;
 }
 
 .inputFormulario {
-    width: 80%;
-    padding: 6px 20px;
-    font-size: 16px;
-    color: #333;
-    background-color: #f9f9f9;
-    border: 2px solid #9f0101;
-    border-radius: 8px;
+    width: 70%;
+    height: 50px;
+    border-radius: 9px;
+    background-color: rgb(81, 74, 106);
+    border: none;
+    margin-bottom: 30px;
+    text-align: center;
+    color: white;
+}
+
+#botonEnviar {
+    background-color: rgb(120, 37, 197);
+    height: 50px;
+    border-radius: 9px;
+    border: none;
+    width: 70%;
+    margin-bottom: 25px;
+}
+
+#colocarExclamacion {
+    transform: translateX(15%);
+}
+
+#tituloFormulario {
+    margin-bottom: 30px;
+}
+
+a {
+    color: rgb(120, 37, 197);
 }
 
 #errorRegistro {
-    font-size: 18px;
-    color: red;
-    margin-left: 1px;
-    margin-top: 3px;
+    position: relative;
+    bottom: 5px;
     visibility: hidden;
 }
 
-#colocarCruz {
-    left: 50%;
-    transform: translateX(10%);
-}
-
-
-
-
-
-
-/* Footer */
-
-.footer {
-    text-align: center;
-    background-color: #000000;
-}
-
-.footer h5 {
+#volverInicio {
+    background-color: rgb(120, 37, 197);
+    padding: 10px;
+    color: white;
     font-weight: bold;
-    margin-bottom: 1rem;
+    border-radius: 15px;
 }
 
-.footer a:hover {
-    text-decoration: underline;
-}
-
-h5 {
-    font-size: 0.9rem;
-}
-
-li a {
-    font-size: 0.8rem;
+input::placeholder {
+    color: #888;
+    font-size: 16px;
+    font-style: italic;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 5px;
 }
