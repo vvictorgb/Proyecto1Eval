@@ -2,7 +2,7 @@
 let urlParam = new URLSearchParams(window.location.search);
 let id = urlParam.get('idProducto');
 
-fetch('http://localhost/GomezBalaguerV%c3%adctorProyecto1T/Proyecto1Eval/productos/producto.php?idProducto=' + id)
+fetch('../productos/producto.php?idProducto=' + id)
     .then(response => response.json())
 
     .then(data => {

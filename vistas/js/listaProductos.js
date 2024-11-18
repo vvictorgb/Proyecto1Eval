@@ -1,5 +1,4 @@
-let apiURL = 'http://localhost/GomezBalaguerV%c3%adctorProyecto1T/Proyecto1Eval/productos/producto.php';
-
+let apiURL = '../productos/producto.php'
 function renderProductos() {
     const productosContainer = document.querySelector('.contenedorFotos');
 

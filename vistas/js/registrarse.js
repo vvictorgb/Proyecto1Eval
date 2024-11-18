@@ -6,7 +6,7 @@ document.getElementById('formularioRegistrarse').addEventListener('submit', func
         jsonData[key] = value;
     });
 
-    fetch('http://localhost/GomezBalaguerV%c3%adctorProyecto1T/Proyecto1Eval/clientes/cliente.php', {
+    fetch('../clientes/cliente.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

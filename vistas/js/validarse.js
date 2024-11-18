@@ -3,7 +3,7 @@ document.getElementById('formularioValidarse').addEventListener('submit', functi
     var formData = new FormData(this);
     let dniEnviar = formData.get('dniCliente');
     let contraseñaEnviar = formData.get('pwd');
-    let api = 'http://localhost/GomezBalaguerV%c3%adctorProyecto1T/Proyecto1Eval/clientes/cliente.php' + "?dniCliente=" + dniEnviar + '&pwd=' + contraseñaEnviar
+    let api = '../clientes/cliente.php' + "?dniCliente=" + dniEnviar + '&pwd=' + contraseñaEnviar
     fetch(api)
         .then(response => response.json())
         .then(data => {
