@@ -17,7 +17,7 @@ fetch('http://localhost/GomezBalaguerV%c3%adctorProyecto1T/Proyecto1Eval/product
         let precioFormulario = document.getElementById('precioFormulario');
         precioFormulario.value = data.precio;
         let imagen = document.getElementById('imagenDetalle');
-        let ruta = '../vistas/imagenes/' + data.nombre + '.png';
+        let ruta = data.foto;
         imagen.src = ruta;
 
     })

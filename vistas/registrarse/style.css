@@ -41,6 +41,7 @@ body {
 #formularioRegistrarse {
     margin-top: 60px;
     transform: translateX(7%);
+    height: 80vh;
 }
 
 #colocarExclamacion {

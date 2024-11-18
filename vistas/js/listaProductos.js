@@ -45,7 +45,7 @@ function renderProductos() {
 
                 const descripcionProducto = document.createElement('p');
                 descripcionProducto.classList.add('card-descripcion');
-                descripcionProducto.innerText = `Origen: ${producto.origen}, Marca: ${producto.marca}`;
+                descripcionProducto.innerText = producto.descripcion;
 
                 const enlace = document.createElement('a');
                 enlace.href = `verDetalle.php?idProducto=${producto.idProducto}`;

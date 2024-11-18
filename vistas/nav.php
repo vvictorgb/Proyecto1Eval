@@ -2,7 +2,7 @@
 session_start();
 ?>
 <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="inicio.php">
         <img src="../vistas/imagenes/LogoNuevo.png" alt="Logo de North Peak" class="logo-image">
         <?php
         if (isset($_SESSION['nombre'])) {
@@ -23,10 +23,10 @@ session_start();
     </form>
     <div id="logosJuntos">
         <a href="validarse.php" id="logoUsuario">
-            <img src="../vistas/imagenes/logoUsuario.png" alt="iconoUsuario">
+            <img src="../vistas/imagenes/logoUsuarioNuevo.png" alt="iconoUsuario">
         </a>
-        <a href="" id="logoCarrito">
-            <img src="../vistas/imagenes/logoCarrito.png" alt="iconoCarrito">
+        <a href="verCarrito.php" id="logoCarrito">
+            <img src="../vistas/imagenes/logoCarritoNuevo.png" alt="iconoCarrito">
         </a>
     </div>
 </nav>

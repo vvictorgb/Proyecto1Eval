@@ -226,6 +226,7 @@ section h1 {
 
 .sombraInfo {
     box-shadow: 0px 0px 10px black;
+
 }
 
 .precio {
@@ -234,6 +235,7 @@ section h1 {
     transform: translateY(-26px);
     font-weight: bold;
 }
+
 
 
 

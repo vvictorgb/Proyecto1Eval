@@ -1,0 +1,408 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    height: 6vh;
+    background-color: #000000;
+    flex-wrap: nowrap;
+}
+
+.navbar-brand {
+    padding: 0 !important;
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+    width: 20vh;
+    height: 6vh;
+}
+
+.logo-image {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#logoUsuario {
+    height: 3vh;
+    margin-right: 50px;
+}
+
+#logoUsuario img {
+    height: 100%;
+    width: auto;
+}
+
+#logosJuntos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+}
+
+#logoCarrito {
+    height: 3vh;
+    margin-right: 2%;
+}
+
+#logoCarrito img {
+    height: 100%;
+    width: auto;
+}
+
+.centered-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.buscador {
+    width: 10%;
+    margin-right: 60px;
+    min-width: 100px;
+}
+
+.navbar-text.centered-text {
+    font-size: 0.60rem;
+    color: rgb(182, 182, 182);
+}
+
+
+
+
+
+/* body */
+
+#añadidoCesta {
+    margin-top: 40px;
+    margin-left: 11%;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.descripcionProducto {
+    min-width: 100px;
+}
+
+#vacio {
+    margin-left: 140px;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+
+.contenedorProducto {
+    background-color: rgb(255, 255, 255);
+    border: 3px black solid;
+    margin-left: 3%;
+    margin: auto;
+    width: 80%;
+    height: 150px;
+    margin-bottom: 20px;
+    min-width: 600px;
+}
+
+#contenedorTitulos {
+    margin-left: 10%;
+    margin: auto;
+    width: 75%;
+    min-width: 600px;
+    flex-wrap: nowrap;
+}
+
+#contenedorTitulos div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contenedorTitulos div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contenedorTitulos div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contenedorTitulos div:nth-child(4) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedorProducto div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedorProducto div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedorProducto div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedorProducto div:nth-child(4) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedorProducto div {
+    width: 90%;
+    margin: auto;
+    height: 100%;
+}
+
+.contenedorProducto div img {
+    height: 80%;
+    width: auto;
+}
+
+.cantidad {
+    transform: translateX(3%);
+}
+
+.cantidad div {
+    margin: 9px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+
+}
+
+.cantidad div:nth-child(1):hover {
+    cursor: pointer;
+}
+
+.cantidad div:nth-child(3):hover {
+    cursor: pointer;
+}
+
+#contenedorTitulos div p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.precioConBasura {
+    transform: translateX(28%);
+}
+
+.precioConBasura div:nth-child(2) {
+    height: 25px;
+}
+
+.precioConBasura div:nth-child(2) img {
+    height: 100%;
+    width: auto;
+}
+
+.eliminarProducto:hover {
+    cursor: pointer;
+}
+
+.productoCesta div:nth-child(2) div {
+    font-size: 14px;
+}
+
+#resumenPedido {
+    margin-top: 120px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#resumenPedido h3 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.contenedorResumenPedido {
+    border: 4px solid black;
+    width: 80%;
+    margin: auto;
+    min-height: 450px;
+    margin-bottom: 30px;
+    max-width: 370px;
+    min-width: 300px;
+
+}
+
+#subtotal {
+    border-bottom: 4px solid black;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    transform: translateY(5px);
+}
+
+#subtotal div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+}
+
+
+#totalPrecio {
+    border-bottom: 4px solid black;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    transform: translateY(5px);
+}
+
+#totalPrecio div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+}
+
+#codigoPromocional {
+    display: flex;
+    border-bottom: 4px solid black;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    transform: translateY(5px);
+}
+
+#codigoPromocional div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+}
+
+#codigoPromocional div:nth-child(2):hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#ticketRegalo {
+    display: flex;
+    border-bottom: 4px solid black;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    transform: translateY(5px);
+}
+
+#ticketRegalo div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+}
+
+#ticketRegalo div:nth-child(2):hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#metodosPago {
+    border-bottom: 4px solid black;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    transform: translateY(5px);
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+#metodosPago div:nth-child(1) {
+
+    text-align: center;
+}
+
+#metodosPago div:nth-child(2) {
+    height: 60px;
+    text-align: center;
+}
+
+#metodosPago div:nth-child(2) img {
+    height: 100%;
+    width: auto;
+    margin-top: 5px;
+}
+
+#colocarPedido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#iniciarPedido {
+    padding: 10px;
+    background-color: rgb(103, 8, 116);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 15px;
+    width: 70%;
+    margin: auto;
+    border: none;
+    max-height: 90px;
+    height: 60px;
+    border: 3px solid black;
+}
+
+#metodosPagoEntidades:hover {
+    cursor: pointer;
+}
+
+
+/* Footer */
+.footer {
+    text-align: center;
+    background-color: #000000;
+}
+
+.footer h5 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+h5 {
+    font-size: 0.9rem;
+}
+
+li a {
+    font-size: 0.8rem;
+}
