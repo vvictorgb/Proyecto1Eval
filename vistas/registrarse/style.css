@@ -1,11 +1,11 @@
 /* General */
-
 body {
     font-family: Arial, sans-serif;
     background-color: rgb(43, 39, 56);
+
 }
 
-#imagenValidarse {
+#imagenLogo {
     height: 40px;
     width: auto;
     border-radius: 6px;
@@ -18,16 +18,6 @@ body {
     align-items: center;
 }
 
-#formulariRegistrarse {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-    justify-content: center;
-    width: 100%;
-    border-radius: 20px;
-}
-
 .inputFormulario {
     width: 70%;
     height: 50px;
@@ -35,8 +25,8 @@ body {
     background-color: rgb(81, 74, 106);
     border: none;
     margin-bottom: 30px;
-    text-align: center;
     color: white;
+    text-align: center;
 }
 
 #botonEnviar {
@@ -46,6 +36,11 @@ body {
     border: none;
     width: 70%;
     margin-bottom: 25px;
+}
+
+#formularioRegistrarse {
+    margin-top: 60px;
+    transform: translateX(7%);
 }
 
 #colocarExclamacion {
@@ -82,4 +77,10 @@ input::placeholder {
     padding-left: 10px;
     padding-right: 10px;
     margin-top: 5px;
+
+}
+
+input:-webkit-autofill {
+    background-color: rgb(81, 74, 106) !important;
+    box-shadow: 0 0 0px 1000px rgb(81, 74, 106) inset !important;
 }

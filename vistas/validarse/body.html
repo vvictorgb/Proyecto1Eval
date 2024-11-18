@@ -1,23 +1,31 @@
-<section style="background-image: url('../vistas/imagenes/fondoInicio.png');">
-    <div class="row">
-        <div class="col-12 text-center">
-            <form action="" method="get" id="formularioValidarse">
-                <div id="tituloFormulario">
-                    <p>Iniciar Sesion</p>
-                </div>
-                <p class="tituloInput">DNI:</p>
-                <div style="display: flex; align-items: center;" id="colocarCruz">
-                    <input type="text" name="dniCliente" required placeholder="00000000r" class="inputFormulario">
-                    <p id="errorValidarse">❗</p>
-                </div>
-                <p class="tituloInput">Contraseña:</p>
-                <input type="password" name="pwd" required class="inputFormulario"
-                    placeholder="Mínimo 8 caracteres"><br>
-                <input type="submit" name="enviar" id="botonEnviar"><br>
-                <a href="registrarse.php">¿No estás registrado?</a>
-                <div><a href="#">Terminos y condiciones</a></div>
-        </div>
-        </form>
+<body style="display: flex; justify-content: center; align-items: center; margin-top:20px;">
 
-    </div>
-</section>
+    <section class="row" style="height: 95vh; width: 95%; margin-left: 10%;">
+        <div class="col-6"
+            style="background-image: url('../vistas/imagenes/imagenRegistros.png'); background-size: cover; background-position: center; border-radius: 15px;overflow: hidden;">
+            <div class="row" style="height: 90px; display: flex; align-items: center; justify-content: center;">
+                <img src="../vistas/imagenes/LogoNuevo.png" alt="FotoLogo" id="imagenLogo">
+            </div>
+            <div class="row" style="height: 70vh;"></div>
+            <div class="row" id="parteInferiorValidar">
+                <a href="inicio.php" id="volverInicio">Volver al inicio</a>
+            </div>
+        </div>
+        <div class="col-6" style="display: flex; justify-content: center;align-items: center; text-align: center;">
+            <div class="row text-center">
+                <form action="" method="post" id="formularioValidarse">
+                    <div id="tituloFormulario">
+                        <h2 style="color: white; font-weight: bold;">Iniciar sesión</h2>
+                    </div>
+                    <div style="display: flex; align-items: center;" id="colocarExclamacion">
+                        <input type="text" name="dniCliente" required placeholder="Dni" class="inputFormulario">
+                        <p id="errorValidarse">❗</p>
+                    </div>
+                    <input type="password" name="pwd" required class="inputFormulario" placeholder="Contraseña"><br>
+                    <input type="submit" name="enviar" id="botonEnviar"><br>
+                    <a href="registrarse.php">¿No estás registrado?</a>
+                    <div><a href="#">Terminos y condiciones</a></div>
+                </form>
+            </div>
+        </div>
+    </section>

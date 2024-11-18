@@ -3,7 +3,7 @@ session_start();
 ?>
 <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" href="#">
-        <img src="../vistas/imagenes/Logo.png" alt="Logo de North Peak" class="logo-image">
+        <img src="../vistas/imagenes/LogoNuevo.png" alt="Logo de North Peak" class="logo-image">
         <?php
         if (isset($_SESSION['nombre'])) {
         ?>
