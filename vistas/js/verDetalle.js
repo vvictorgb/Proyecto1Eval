@@ -22,3 +22,35 @@ fetch('../productos/producto.php?idProducto=' + id)
 
     })
     .catch(error => console.error("Error en la solicitud:", error));
+
+
+
+document.getElementById('formularioDetalle').addEventListener('submit', function (event) {
+    event.preventDefault();
+    var formData = new FormData(this);
+    let cantidad = formData.get('cantidad');
+    let idProducto = formData.get('idProducto');
+    fetch('../carrito/carrito.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            cantidad: cantidad,
+            idProducto: idProducto
+        }
+
+        )
+    })
+        .then(response => response.text())
+        .then(data => {
+            window.location.href = "verCarrito.php";
+        })
+        .catch(error => {
+            console.error('Error:', error)
+            alert('Hubo un problema con la solicitud al servidor.');
+        });
+
+}
+)
+

@@ -13,10 +13,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $link->beginTransaction();
             $cli->guardar($link);
             header("HTTP/1.1 200 OK");
+            $link->commit();
             $_SESSION['dniCliente'] = $vector['dniCliente'];
             $_SESSION['nombre'] = $vector['nombre'];
+            if (isset($_SESSION['idUnico'])) {
+                $idUnico = $_SESSION['idUnico'];
+                $carrito = new Carrito($idUnico, "", "", $vector['dniCliente']);
+                $carrito->actualizarDniCliente($link);
+            }
             echo json_encode(["registro" => true]);
-            $link->commit();
             exit();
         } else {
             header("HTTP/1.1 200 OK");
@@ -41,6 +46,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("HTTP/1.1 200 OK");
                 $_SESSION['nombre'] = $datosCliente['nombre'];
                 $_SESSION['dniCliente'] = $_GET['dniCliente'];
+                if (isset($_SESSION['idUnico'])) {
+                    $idUnico = $_SESSION['idUnico'];
+                    $carrito = new Carrito($idUnico, "", "", $_GET['dniCliente']);
+                    $carrito->actualizarDniCliente($link);
+                    echo json_encode(["registro" => true]);
+                    exit();
+                }
                 echo json_encode(["registro" => true]);
                 exit();
             } else {
@@ -60,5 +72,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 }
-
 header("HTTP/1.1 400 Bad Request");
