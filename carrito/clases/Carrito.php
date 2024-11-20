@@ -28,11 +28,20 @@ class Carrito
         $consulta = "SELECT * FROM carrito WHERE idUnico ='$this->idUnico'";
         $result = $link->prepare($consulta);
         $result->execute();
-        return $result->fetch(PDO::FETCH_ASSOC);
+        $data = $result->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
     }
     function eliminarProductoCarrito($link)
     {
         $consulta = $link->prepare("DELETE FROM carrito WHERE idProducto = '$this->idProducto' AND idUnico = '$this->idUnico'");
+        return $consulta->execute();
+    }
+    function modificarCantidad($link)
+    {
+        $consulta = $link->prepare("UPDATE carrito SET cantidad = :cantidad WHERE idProducto = :idProducto AND idUnico = :idUnico");
+        $consulta->bindParam(':cantidad', $this->cantidad);
+        $consulta->bindParam(':idProducto', $this->idProducto);
+        $consulta->bindParam(':idUnico', $this->idUnico);
         return $consulta->execute();
     }
 }

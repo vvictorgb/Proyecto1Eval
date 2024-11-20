@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             exit();
         } catch (PDOException $e) {
             $base->link->rollback();
+            header("HTTP/1.1 400 Bad Request");
             $dato = "¡Error!: " . $e->getMessage();
             echo json_encode(["error" => $dato]);
             exit();
@@ -30,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             exit();
         } catch (PDOException $e) {
             $base->link->rollback();
+            header("HTTP/1.1 400 Bad Request");
             $dato = "¡Error!: " . $e->getMessage();
             echo json_encode(["error" => $dato]);
             exit();
