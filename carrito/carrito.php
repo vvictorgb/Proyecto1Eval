@@ -29,12 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } elseif ($_SERVER['REQUEST_METHOD'] == 'GET') {
     try {
-        if (!isset($_SESSION['idUnico'])) {
+        if (!isset($_GET['idUnico'])) {
             header("HTTP/1.1 200 OK");
             echo json_encode([]);
             exit();
         }
-        $carrito = new Carrito($_SESSION['idUnico'], "", "");
+        $carrito = new Carrito($_GET['idUnico'], "", "");
         $elementosCarrito = $carrito->carritoID($link);
         header("HTTP/1.1 200 OK");
         echo json_encode($elementosCarrito);

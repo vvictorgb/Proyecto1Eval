@@ -1,4 +1,4 @@
-let apiCarrito = "../carrito/carrito.php"
+let apiCarrito = "../carrito/carrito.php?idUnico=" + idUnico;
 
 // Obtener datos del carrito
 fetch(apiCarrito)
