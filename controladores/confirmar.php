@@ -7,7 +7,7 @@ if (!isset($_SESSION['dniCliente'])) {
     header('Location: validarse.php');
 } else {
     try {
-        //InsertarPedido
+
         $link->beginTransaction();
         $dniCliente = $_SESSION['dniCliente'];
         $fecha = date('Y-m-d');
@@ -17,27 +17,22 @@ if (!isset($_SESSION['dniCliente'])) {
         $pedidoNuevo = new Pedido($idPedido, $fecha, $dniCliente, $dirEntrega);
         $pedidoNuevo->nuevoPedido($link);
 
-        $mostrarFactura = "
-        <h3>Dni Cliente:
-        $dniCliente
-        </h3><br>
-        <h3>Fecha:
-            $fecha
-        </h3><br>
-        <h3>Numero Pedido:
-            $idPedido
-        </h3><br>
-        <h3>Direccion entrega:
-            $dirEntrega
-        </h3><br>";
+        $mostrarFactura = "<h3>Dni Cliente:$dniCliente</h3><br><h3>Fecha: $fecha</h3><br><h3>Numero Pedido:$idPedido</h3><br><h3>Direccion entrega:$dirEntrega</h3><br>";
 
-        //Insertar Lineas
+
         $api = 'http://localhost/GomezBalaguerV%c3%adctorProyecto1T/Proyecto1Eval/carrito/carrito.php?idUnico=' . $_SESSION['idUnico'];
         $carr = json_decode(file_get_contents($api), true);
         $lineasPedidos = lineasPedido::InsertarTodas($link, $carr, $idPedido);
-        $link->commit();
+
         $mostrarFactura .= $lineasPedidos;
+        $mostrarFactura -= "<a href=''>Ir al pdf</a>";
         echo $mostrarFactura;
+
+
+        $borrar = new CarritoEliminar($_SESSION['idUnico']);
+        $borrar->borrarTodo($link);
+        $link->commit();
+        session_unset();
         exit();
     } catch (PDOException $e) {
         $link->rollback();
