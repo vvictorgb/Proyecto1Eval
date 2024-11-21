@@ -17,16 +17,16 @@ if (!isset($_SESSION['dniCliente'])) {
         $pedidoNuevo = new Pedido($idPedido, $fecha, $dniCliente, $dirEntrega);
         $pedidoNuevo->nuevoPedido($link);
 
-        $mostrarFactura = "<h3>Dni Cliente:$dniCliente</h3><br><h3>Fecha: $fecha</h3><br><h3>Numero Pedido:$idPedido</h3><br><h3>Direccion entrega:$dirEntrega</h3><br>";
+        $dato = "<h3>Dni Cliente:$dniCliente</h3><br><h3>Fecha: $fecha</h3><br><h3>Numero Pedido:$idPedido</h3><br><h3>Direccion entrega:$dirEntrega</h3><br>";
 
 
         $api = 'http://localhost/GomezBalaguerV%c3%adctorProyecto1T/Proyecto1Eval/carrito/carrito.php?idUnico=' . $_SESSION['idUnico'];
         $carr = json_decode(file_get_contents($api), true);
         $lineasPedidos = lineasPedido::InsertarTodas($link, $carr, $idPedido);
 
-        $mostrarFactura .= $lineasPedidos;
-        $mostrarFactura -= "<a href=''>Ir al pdf</a>";
-        echo $mostrarFactura;
+        $dato .= $lineasPedidos;
+        $dato .= "<a href=''>Ir al pdf</a>";
+        include "../vistas/mensaje.php";
 
 
         $borrar = new CarritoEliminar($_SESSION['idUnico']);
