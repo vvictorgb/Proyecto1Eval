@@ -20,12 +20,12 @@ if (!isset($_SESSION['dniCliente'])) {
         $dato = "<h3>Dni Cliente:$dniCliente</h3><br><h3>Fecha: $fecha</h3><br><h3>Numero Pedido:$idPedido</h3><br><h3>Direccion entrega:$dirEntrega</h3><br>";
 
 
-        $api = 'http://localhost/GomezBalaguerV%c3%adctorProyecto1T/Proyecto1Eval/carrito/carrito.php?idUnico=' . $_SESSION['idUnico'];
+        $api = 'http://localhost/Proyecto1Eval/carrito/carrito.php?idUnico=' . $_SESSION['idUnico'];
         $carr = json_decode(file_get_contents($api), true);
         $lineasPedidos = lineasPedido::InsertarTodas($link, $carr, $idPedido);
 
         $dato .= $lineasPedidos;
-        $dato .= "<a href=''>Ir al pdf</a>";
+        $dato .= "<a href='crearPDF.php?factura=".urlencode($dato)."'>Descargar al pdf</a>";
         include "../vistas/mensaje.php";
 
 
