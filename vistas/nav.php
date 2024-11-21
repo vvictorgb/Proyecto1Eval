@@ -2,6 +2,13 @@
     <a class="navbar-brand" href="inicio.php">
         <img src="../vistas/imagenes/LogoNuevo.png" alt="Logo de North Peak" class="logo-image">
     </a>
+    <?php
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    if (isset($_SESSION['dniCliente']))
+        echo "<div> Bienvenido " . $_SESSION['nombre'] . "</div>";
+    ?>
 
     <div class="collapse navbar-collapse">
         <span class="navbar-text centered-text">ENVÍO GRATIS DESDE 19€</span>
@@ -17,4 +24,5 @@
             <img src="../vistas/imagenes/logoCarritoNuevo.png" alt="iconoCarrito">
         </a>
     </div>
+
 </nav>
